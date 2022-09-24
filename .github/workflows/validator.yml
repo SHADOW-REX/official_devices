@@ -1,13 +1,13 @@
 name: Validate Device JSONs
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the eleven branch
+# events but only for the thirteen branch
 on:
   push:
     branches:
-      - eleven
+      - thirteen
   pull_request:
     branches:
-      - eleven
+      - thirteen
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -22,5 +22,5 @@ jobs:
         uses: anyone-developer/anyone-validate-json@main
         with:
           file-extension: ".json"
-          ignore-files: "README.md"
-          ignore-directories: ".git"
+          ignore-files: "README.md" , "devices.json"
+          ignore-directories: ".git" , ".github"

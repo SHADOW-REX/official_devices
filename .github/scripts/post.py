@@ -119,13 +119,13 @@ def get_info(id):
     print("Maintained by : " + required['maintainer'])
     print("File name : " + required['filename'])
     print("Version : " + required['version'])
-    print("Variant : Gapps")
+    print("Variant : Vanilla")
 
     return {
         "device": device,
         "size": int(required['size']),
         "maintainer": required['maintainer'],
-        "variant": "Gapps",
+        "variant": "Vanilla",
         "version" : required['version'],
         'name' : required["device_name"],
         "time" : required['datetime'],
@@ -178,7 +178,7 @@ for i in get_diff(new, old):
     print(i)
     info = get_info(i)
     #send_mes(cook_content(info))
-    send_photo(".github/assets/gapps.jpg", cook_content(info))
+    send_photo(".github/assets/vanilla.jpg", cook_content(info))
     bot.send_sticker(CHAT_ID, STICKER_ID)
     commit_descriptions += info['name'] + " (" + info['device'] + ")\n"
     release_notes += info['name'] + " (" + info['device'] + ")\n"
